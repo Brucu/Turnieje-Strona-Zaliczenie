@@ -1,111 +1,107 @@
-Aplikacja "Turnieje" (Turnieje App)
+🏆 Turnieje App
+
+Pełnostackowa aplikacja internetowa do zarządzania turniejami
+
+📖 Spis treści
 
 Opis Projektu
 
-Projekt to pełnostackowa (full-stack) aplikacja internetowa służąca do zarządzania turniejami. Została podzielona na dwie główne części: serwer (backend) oraz interfejs użytkownika (frontend).
-
-Wykorzystane Technologie
-
-Backend
-
-Środowisko: Node.js
-
-Baza danych / ORM: Prisma
-
-Zależności: Szczegóły w pliku backend/package.json
-
-Frontend
-
-Biblioteka: React
-
-Narzędzie budujące: Vite
-
-Stylowanie: CSS (główny plik index.css)
-
-Architektura: Komponentowa, z wydzielonymi widokami (Pages: Home, Login, Profile, Tournaments).
+Główne Funkcjonalności
 
 Struktura Katalogów
 
-Projekt składa się z dwóch głównych modułów:
+Instrukcja Uruchomienia
+
+Zrzuty Ekranu
+
+Autor
+
+🎯 Opis Projektu
+
+Projekt to pełnostackowa (full-stack) aplikacja internetowa służąca do kompleksowego zarządzania turniejami. Została zaprojektowana z wykorzystaniem nowoczesnych narzędzi, zapewniając podział na serwer (backend) obsługujący bazę danych oraz responsywny interfejs użytkownika (frontend).
+
+✨ Główne Funkcjonalności
+
+Strona Główna (Home.jsx): Ekran powitalny, przegląd działania aplikacji i najważniejszych informacji.
+
+Autoryzacja (Login.jsx): Bezpieczny system logowania i zarządzania sesją użytkowników.
+
+Panel Profilu (Profile.jsx): Miejsce do zarządzania swoimi danymi i preferencjami.
+
+Zarządzanie Turniejami (Tournaments.jsx): Rdzeń aplikacji pozwalający na przeglądanie, tworzenie oraz edycję turniejów.
+
+🗂️ Struktura Katalogów
+
+Architektura projektu została podzielona na dwa niezależne środowiska:
 
 turnieje-app/
-├── backend/                # Logika serwerowa i połączenie z bazą danych
-│   ├── prisma/             # Schematy bazy danych i konfiguracja ORM (schema.prisma)
-│   ├── index.js            # Punkt wejściowy aplikacji serwerowej
-│   └── .env                # Plik ze zmiennymi środowiskowymi (np. adres bazy danych)
+├── backend/                # Logika API i połączenie z bazą danych
+│   ├── prisma/             # Schematy bazy danych (schema.prisma)
+│   ├── index.js            # Główny plik serwera
+│   └── .env                # Zmienne środowiskowe (np. DATABASE_URL)
 │
-└── frontend/               # Aplikacja kliencka (React + Vite)
+└── frontend/               # Aplikacja kliencka React
     ├── src/
-    │   ├── assets/         # Pliki statyczne (np. obrazki)
+    │   ├── assets/         # Zasoby statyczne (grafiki, ikony)
     │   ├── Components/     # Komponenty wielokrotnego użytku
-    │   ├── pages/          # Główne widoki aplikacji (Strona główna, Logowanie, itp.)
-    │   ├── App.jsx         # Główny komponent zarządzający routingiem
-    │   └── main.jsx        # Punkt wejściowy aplikacji React
-    └── vite.config.js      # Konfiguracja bundlera Vite
+    │   ├── pages/          # Główne widoki (Routing)
+    │   ├── App.jsx         # Konfiguracja ścieżek aplikacji
+    │   └── main.jsx        # Punkt wejściowy React
+    └── vite.config.js      # Konfiguracja środowiska Vite
 
 
-Instrukcja Uruchomienia dla Wykładowcy
+🚀 Instrukcja Uruchomienia dla Wykładowcy
 
-Aby poprawnie uruchomić projekt na środowisku lokalnym, należy zainstalować wymagane zależności oraz uruchomić oba moduły (backend i frontend) w osobnych oknach terminala.
+Aby poprawnie przetestować aplikację w środowisku lokalnym, należy uruchomić oddzielnie backend oraz frontend.
 
-Wymagania Wstępne
+Wymagania wstępne: Zainstalowany Node.js oraz dostęp do bazy danych.
 
-Zainstalowany Node.js (zalecana wersja LTS)
+1️⃣ Uruchomienie Backendu
 
-Dostęp do bazy danych (zgodnie z konfiguracją w pliku .env)
+Otwórz terminal w głównym folderze projektu i wykonaj poniższe kroki:
 
-Krok 1: Konfiguracja i uruchomienie Backendu
-
-Przejdź do folderu backendu:
-
+# 1. Przejdź do folderu backendu
 cd backend
 
-
-Zainstaluj zależności:
-
+# 2. Zainstaluj wymagane zależności
 npm install
 
+# 3. Uzupełnij zmienne środowiskowe (skonfiguruj plik .env podając DATABASE_URL)
 
-Skonfiguruj plik środowiskowy .env. (Należy upewnić się, że zmienna DATABASE_URL wskazuje na poprawną bazę danych).
-
-Wygeneruj klienta Prisma i zsynchronizuj bazę danych:
-
+# 4. Wygeneruj klienta Prisma i zsynchronizuj schemat z bazą danych
 npx prisma generate
 npx prisma db push
 
-
-Uruchom serwer:
-
+# 5. Uruchom serwer API
 node index.js
 
 
-(Serwer powinien domyślnie nasłuchiwać na porcie zdefiniowanym w kodzie, np. http://localhost:3000)
+Serwer uruchomi się na domyślnym porcie (np. http://localhost:3000).
 
-Krok 2: Konfiguracja i uruchomienie Frontendu
+2️⃣ Uruchomienie Frontendu
 
-W nowym oknie terminala przejdź do folderu frontendu:
+W nowym oknie terminala przejdź do folderu frontendu i uruchom aplikację kliencką:
 
+# 1. Przejdź do folderu frontendu
 cd frontend
 
-
-Zainstaluj zależności:
-
+# 2. Zainstaluj zależności
 npm install
 
-
-Uruchom serwer deweloperski Vite:
-
+# 3. Uruchom serwer deweloperski
 npm run dev
 
 
-Aplikacja kliencka będzie dostępna w przeglądarce (zazwyczaj pod adresem http://localhost:5173).
+Aplikacja będzie dostępna w przeglądarce pod adresem: http://localhost:5173
 
-Główne Funkcjonalności (Widoki)
+📸 Zrzuty Ekranu
 
-Strona Główna (Home.jsx): Ekran powitalny i przegląd aplikacji.
+(Miejsce na wstawienie zrzutów ekranu – aby dodać grafikę na GitHubie, wystarczy przeciągnąć obrazek w to miejsce podczas edycji pliku)
 
-Logowanie (Login.jsx): System autoryzacji użytkowników.
+👨‍🎓 Autor
 
-Profil (Profile.jsx): Panel zarządzania danymi zalogowanego użytkownika.
+Imię i Nazwisko: [Twoje Imię i Nazwisko]
 
-Turnieje (Tournaments.jsx): Główny moduł pozwalający na przeglądanie (i zarządzanie) turniejami.
+Numer Indeksu: [Twój numer indeksu]
+
+Kierunek / Grupa: Informatyka / [Numer grupy]
