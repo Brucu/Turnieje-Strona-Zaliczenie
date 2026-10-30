@@ -34,7 +34,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div>
+      <div className="app-shell">
         {/* Przekazujemy nick do Navbara, żeby mógł wyświetlić powitanie */}
         <Navbar username={username} /> 
         
@@ -46,6 +46,7 @@ function App() {
             <Route path="/zaloguj" element={<Login />} />
           </Routes>
         </main>
+        <footer className="site-footer">Jakub Burc · 127606</footer>
       </div>
     </BrowserRouter>
   );

@@ -44,6 +44,12 @@ body::before {
   pointer-events: none;
 }
 
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
 button,
 a {
   font: inherit;
@@ -172,9 +178,17 @@ a:focus-visible {
 
 .content {
   width: min(100% - 48px, 1120px);
-  min-height: calc(100vh - 76px);
+  flex: 1;
   margin: 0 auto;
   padding: 72px 0 96px;
+}
+
+.site-footer {
+  padding: 20px 24px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
 }
 
 .home-page {
@@ -679,7 +693,6 @@ a:focus-visible {
 
   .content {
     width: min(100% - 36px, 1120px);
-    min-height: calc(100vh - 120px);
     padding: 48px 0 72px;
   }
 
